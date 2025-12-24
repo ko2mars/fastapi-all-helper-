@@ -8,7 +8,7 @@
 
 # Installation
 ```bash
-pip install fastapi-helper
+pip install fastapi-all-helper
 ```
 
 # Quick Start
