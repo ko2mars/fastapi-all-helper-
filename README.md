@@ -14,7 +14,7 @@ pip install fastapi-helper
 # Quick Start
 ```python
 import asyncio
-from fastapi_helper.sql.db_helper import DataBaseHelper
+from fastapi_helper.sql import DataBaseHelper
 
 db_helper = DataBaseHelper("sqlite+aiosqlite:///test.db")
 # Database URL is better stored in .env environment
@@ -32,8 +32,8 @@ if __name__ == "__main__":
 import asyncio
 from fastapi import FastAPI
 from sqlalchemy import select
-from fastapi_helper.sql.db_helper import DataBaseHelper
-from fastapi_helper.sql.models import SQL
+from fastapi_helper.sql import DataBaseHelper
+from fastapi_helper.sql import SQL
 import uvicorn
 
 app = FastAPI()
