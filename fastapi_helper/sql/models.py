@@ -15,21 +15,21 @@ from sqlalchemy import (
 
 class SQL:
     """
-    Docstring для SQL
+    Docstring for SQL
     
-    Контейнер для хранения схем таблиц базы данных.
+    Container for database table schemes storage.
     
-    Внутри этого класса сгруппированы модели ORM (User, UserSession), 
-    что позволяет логически отделить структуру таблиц от логики запросов.
+    Inside this class ORM models are grouped (User, UserSession), 
+    which allows to logically divide tables from the request logic.
     """
     
     class User(ORMBase):
         """
-        Модель для хранения учетных данных пользователей.
+        Model for storage of users accounts.
         
-        Содержит информацию о логине (username), хешированном пароле 
-        и дате регистрации (create_at). Индексированные поля позволяют 
-        быстро выполнять поиск при авторизации.
+        Contains information about users login (username), hashed password
+        and registration date (create_at). Indexed fields allow to 
+        do a qick search during an authorization.
         """
         username: Mapped[str] = mapped_column(String, index=True)
         hash_password: Mapped[str] = mapped_column(String, index=True)
@@ -37,11 +37,11 @@ class SQL:
     
     class UserSession(ORMBase):
         """
-        Модель для управления активными сессиями пользователей.
+        Model for controlling users active sessions.
         
-        Используется для хранения токенов авторизации, времени их создания 
-        и срока истечения (expire_at), обеспечивая механизм безопасности 
-        и контроля доступа.
+        Used for storage of authorization tokens, time of their creation 
+        and expiration date (expire_at), providing a safety mechanism 
+        and access control.
         """
         
         
