@@ -1,8 +1,8 @@
 [project]
 name = "fastapi-all-helper"
-version = "0.1.2"
+version = "0.1.2.1"
 description = "Helper classes and utilities for FastAPI and SQLAlchemy"
-readme = "README.md"
+readme = "fastapi_helper/docs/en/quick_start.md"
 license = {file = "LICENSE"}
 authors = [
     {name = "NEFOR", email = "n7for8572@gmail.com"}
@@ -20,6 +20,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
+    "aiosqlite>=0.22.1",
     "fastapi>=0.127.0",
     "sqlalchemy>=2.0.45",
     "uvicorn>=0.40.0",

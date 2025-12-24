@@ -6,40 +6,49 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PyPI](https://img.shields.io/badge/PyPI-fastapi--helper-blue.svg)](https://pypi.org/project/fastapi-helper)
 
-# Installation
-```bash
-pip install fastapi-helper
+# Установка 
+```bash 
+pip install fastapi-all-helper
 ```
 
-# Quick Start
-```python
+# Быстрый старт 
+```python 
 import asyncio
-from fastapi_helper.sql.db_helper import DataBaseHelper
 
-db_helper = DataBaseHelper("sqlite+aiosqlite:///test.db")
-# Database URL is better stored in .env environment
-# here it's shown for demonstration purposes
+from fastapi_helper.sql import DataBaseHelper
+
+
+db_helper = DataBaseHelper(
+    url="sqlite+aiosqlite:///test.db"
+)
+# Ссылку на базу данных лучше хранить в .env оружении 
+# тут она показана в качестве демонстрации
+
 
 async def main() -> None:
     await db_helper.init_db()
-
+    
+    
 if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-# Usage with FastAPI
-```python
+# Использование с FastAPI
+```python 
 import asyncio
 from fastapi import FastAPI
 from sqlalchemy import select
-from fastapi_helper.sql.db_helper import DataBaseHelper
-from fastapi_helper.sql.models import SQL
+from fastapi_helper.sql import SQL, DataBaseHelper
 import uvicorn
 
+
+
+
 app = FastAPI()
-db = DataBaseHelper("sqlite+aiosqlite:///test2.db")
-# Database URL is better stored in .env environment
-# here it's shown for demonstration purposes
+db = DataBaseHelper(url="sqlite+aiosqlite:///test2.db") 
+# Ссылку на базу данных лучше хранить в .env оружении 
+# тут она показана в качестве демонстрации
+
 
 @app.get('/')
 async def get_all_user():
@@ -48,13 +57,17 @@ async def get_all_user():
             select(SQL.User)
         )
         return get_all.scalars().all()
-
-async def main():
+    
+    
+async def main() -> None:
     await db.init_db()
-
+    
+    
 if __name__ == "__main__":
     asyncio.run(main())
     uvicorn.run(app, port=8080)
 ```
+
+
 
 

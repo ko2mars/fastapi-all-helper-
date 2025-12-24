@@ -13,7 +13,6 @@ from sqlalchemy.ext.asyncio import (
 from .base import ORMBase
 
 
-
 class DataBaseHelper:
     def __init__(
         self,
@@ -21,6 +20,7 @@ class DataBaseHelper:
         echo: bool = False,
         echo_pool: bool = False
 ) -> None:
+              
         self.engine: AsyncEngine = create_async_engine(
             url=url,
             echo=echo,
