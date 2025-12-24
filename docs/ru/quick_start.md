@@ -42,8 +42,6 @@ from fastapi_helper.sql import SQL, DataBaseHelper
 import uvicorn
 
 
-
-
 app = FastAPI()
 db = DataBaseHelper(url="sqlite+aiosqlite:///test2.db") 
 # Ссылку на базу данных лучше хранить в .env оружении 
