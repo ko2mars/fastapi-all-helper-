@@ -9,7 +9,7 @@ from sqlalchemy import Integer
 
 class ORMBase(DeclarativeBase):
     """
-    A basic class for all ORM models.
+    The basic class for all ORM models.
     
     It is a declarative base from which all tables are inherited.
     The class itself is not initialized as a separate table in the SQL database,
