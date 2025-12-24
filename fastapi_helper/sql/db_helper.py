@@ -84,7 +84,7 @@ class DataBaseHelper:
     Asynchronous generator for getting a database session.
     
     Uses session factory to create the connection context.
-    After shuttdown in the code causing it, session ends 
+    After shuttdown in the code causing it session ends 
     automatically.
     
     Yields:
