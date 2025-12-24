@@ -2,7 +2,7 @@
 name = "fastapi-all-helper"
 version = "0.1.2.1"
 description = "Helper classes and utilities for FastAPI and SQLAlchemy"
-readme = "fastapi_helper/docs/en/quick_start.md"
+readme = "README.md"
 license = {file = "LICENSE"}
 authors = [
     {name = "NEFOR", email = "n7for8572@gmail.com"}
