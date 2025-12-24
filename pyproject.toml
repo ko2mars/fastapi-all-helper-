@@ -1,6 +1,6 @@
 [project]
 name = "fastapi-all-helper"
-version = "0.1.1"
+version = "0.1.2"
 description = "Helper classes and utilities for FastAPI and SQLAlchemy"
 readme = "README.md"
 license = {file = "LICENSE"}

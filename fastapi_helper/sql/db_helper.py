@@ -15,7 +15,7 @@ from .base import ORMBase
 
 
 class DataBaseHelper:
-    def init(
+    def __init__(
         self,
         url: str,
         echo: bool = False,
