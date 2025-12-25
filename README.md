@@ -6,12 +6,12 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PyPI](https://img.shields.io/badge/PyPI-fastapi--helper-blue.svg)](https://pypi.org/project/fastapi-helper)
 
-# Installation
+#📥 Installation
 ```bash
 pip install fastapi-helper
 ```
 
-# Quick Start
+#✅ Quick Start
 ```python
 import asyncio
 from fastapi_helper.sql import DataBaseHelper
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-# Usage with FastAPI
+#📱 Usage with FastAPI
 ```python
 import asyncio
 from fastapi import FastAPI
