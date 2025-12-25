@@ -15,25 +15,25 @@ from .base import ORMBase
 
 class DataBaseHelper:
     """
-    Docstring для DataBaseHelper
+    Docstring for DataBaseHelper
     
-    DataBaseHelper гланый класс библиотеки в этом классе уже реализованы такие методы 
-    - Cоздание async engine 
+    DataBaseHelper is the main library class, and in this class such methods are implemented: 
+    - Creating async engine 
     
-    - Cоздание фабрики сессии
+    - Creating a session factory
     
-    - Метод(init_db) для иницилизации базы данных
+    - Method(init_db) for database initialization
     
-    - Метод(dispose) для завершения открытых соеденений с базой данных 
-      при завершении работы вашего приложения 
+    - Method(dispose) for closing open connections with a database 
+      when your app is shut down 
       
-    - Метод(session_getter) который при запросе открывает соеденение с баззой данных
-      временно отдает сессию  для работы, а при завершении работы
-      атоматически закрывает соеденение 
+    - Method(session_getter) which opens connection with a database by request
+      and temporarily gives a session for work, and with a shutdown
+      closes connection automatically. 
       
-    И да вам не придеться все это писать в ручную уже все сделанно за вас
-    вам лишь нужно создать обьект класс DataBaseHelper и в поле url укажите ссылку 
-    на вашу баззу данных
+    And you do not need to do this all manually - its already done for you!
+    All you need is to create DataBaseHelper class object and in "url" put 
+    a link to your database.
     
     
     
@@ -61,10 +61,10 @@ class DataBaseHelper:
 
     async def init_db(self) -> None:
         """
-        Docstring для init_db
+        Docstring for init_db
         
-        :param self: Создаем иницилизацию баззы данных на основе 
-        класса ORMBase 
+        :param self: Creating an inititalization for
+        an ORMBase class database.
         """
         async with self.engine.begin() as conn:
             await conn.run_sync(ORMBase.metadata.create_all)
@@ -72,23 +72,23 @@ class DataBaseHelper:
 
     async def dispose(self) -> None:
         """
-        Docstring для dispose
+        Docstring for dispose
         
-        :param self: Данный метод 
+        :param self: This method
         """
         await self.engine.dispose()
 
 
     async def session_getter(self) -> AsyncGenerator:
         """
-    Асинхронный генератор для получения сессии базы данных.
+    Asynchronous generator for getting a database session.
     
-    Использует сессионную фабрику для создания контекста подключения.
-    После завершения работы в вызывающем коде, сессия автоматически 
-    закрывается
+    Uses session factory to create the connection context.
+    After shuttdown in the code causing it session ends 
+    automatically.
     
     Yields:
-        AsyncSession: Объект сессии для выполнения SQL-запросов.
+        AsyncSession: Session object to do SQL-requests.
         """
         async with self.session_factory() as session:
             yield session 

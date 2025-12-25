@@ -9,11 +9,11 @@ from sqlalchemy import Integer
 
 class ORMBase(DeclarativeBase):
     """
-    Базовый класс для всех моделей ORM.
+    The basic class for all ORM models.
     
-    Является декларативным основанием, от которого наследуются все таблицы.
-    Сам класс не инициализируется как отдельная таблица в базе данных SQL,
-    а служит шаблоном для определения структуры дочерних моделей.
+    It is a declarative base from which all tables are inherited.
+    The class itself is not initialized as a separate table in the SQL database,
+    but serves as a template to define structure of the child models.
     """
     
     __abstract__ = True 
@@ -21,13 +21,13 @@ class ORMBase(DeclarativeBase):
     @declared_attr.directive
     def __tablename__(cls) -> str:
         """
-        Docstring для __tablename__
+        Docstring for __tablename__
         
-        :param cls: В параметр будет входить название класса 
-        который наследуется от ORMBase и становиться таблицей SQL
-        :return: Возращаться будет имя нашего класса(Таблицы SQL) с помощью метода 
-        lower() будет опускаться в нижний регистр и добавляться буква s 
-        таким образом у нас был класс 
+        :param cls: The class name will be an input for the parameter, 
+        which is inherited from ORMBase and becomes an SQL table.
+        :return: It will be returned as our class name (an SQL table) and with 
+        the lower() method will be lowered down to a lower register and added an "s" letter. 
+        So we had a class:
         ```python
         from fastapi_helper.sql import ORMBase
         
@@ -35,12 +35,12 @@ class ORMBase(DeclarativeBase):
         async with ...:
             await conn.run_sync(ORMBase.metadata.create_all)
         ```
-        Таким образом при иницилизации базы данных 
-        он будет создавать все таблицы в базе данных взяв их имена 
-        опустит их в нижний регистр и автоматически добавит окончание  s
+        and with an initialization of the database,
+        it will create all the tables in the database, giving them their names
+        and lowering them into a lower register and adding an "s" letter automatically.
         
-        а на вызоде мы получим 
-        таблицу с именем users
+        And on the output we will get 
+        a table with a name "users"
         
         :rtype: str
         """
