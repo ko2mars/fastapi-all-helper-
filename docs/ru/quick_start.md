@@ -6,12 +6,12 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PyPI](https://img.shields.io/badge/PyPI-fastapi--helper-blue.svg)](https://pypi.org/project/fastapi-helper)
 
-# Установка 
+#📥 Установка 
 ```bash 
 pip install fastapi-all-helper
 ```
 
-# Быстрый старт 
+#✅ Быстрый старт 
 ```python 
 import asyncio
 
@@ -33,7 +33,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-# Использование с FastAPI
+#📱 Использование с FastAPI
 ```python 
 import asyncio
 from fastapi import FastAPI
