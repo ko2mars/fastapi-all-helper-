@@ -1,5 +1,6 @@
 # Python-generated files
 __pycache__/
+
 *.py[oc]
 build/
 dist/
@@ -14,4 +15,6 @@ uv.lock
 #db 
 test.db 
 
+#config
+config.py
 
