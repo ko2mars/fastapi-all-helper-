@@ -1,6 +1,6 @@
 [project]
 name = "fastapi-all-helper"
-version = "0.1.2.1"
+version = "0.1.2.2"
 description = "Helper classes and utilities for FastAPI and SQLAlchemy"
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -22,6 +22,8 @@ classifiers = [
 dependencies = [
     "aiosqlite>=0.22.1",
     "fastapi>=0.127.0",
+    "g4f>=6.7.5",
+    "pydantic-settings>=2.12.0",
     "sqlalchemy>=2.0.45",
     "uvicorn>=0.40.0",
 ]
@@ -36,9 +38,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/neforceo/fastapi-helper"
-Repository = "https://github.com/neforceo/fastapi-helper"
-Issues = "https://github.com/neforceo/fastapi-helper/issues"
+Homepage = "https://github.com/neforceo/fastapi-helper-"
+Repository = "https://github.com/neforceo/fastapi-helper-"
+Issues = "https://github.com/neforceo/fastapi-helper/issues-"
 
 
 
